@@ -1,7 +1,21 @@
 var save = $(".saveBtn")
 save.on("click", onSave)
-var currentDay = moment().format('MMMM Do YYYY, h:mm:ss a')
-$("#currentDay").html(currentDay)
+
+
+var currentDay = null,
+        date = null;
+
+var update = function () {
+    date = moment(new Date())
+    currentDay.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
+};
+
+$(document).ready(function(){
+    currentDay = $('#currentDay')
+    update();
+    setInterval(update, 1000);
+});
+
 
 var hours = [{
     id:"text-9",
@@ -48,7 +62,7 @@ var hours = [{
     time: 17,
     description: 'user-entered event',
     status: 'present'
-  }]
+  }];
 
 
 function onSave(event) {
@@ -69,6 +83,7 @@ function onLoad() {
     data.forEach(function (hour) {
       var hourElt = $("#" + hour.id)
       hourElt.val(hour.description)
+
         if(currentHour > hour.time) {
             hourElt.addClass("past")
         }
