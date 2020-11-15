@@ -1,7 +1,7 @@
 # Day-Planner
 
 ## Pictures of the planner!
-![Screenshot of the planner](./images/Screenshot-1)
+![Screenshot of the planner](./images/Screenshot-1.png)
 
 
 ## Github pages 
