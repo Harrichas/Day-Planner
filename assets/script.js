@@ -66,9 +66,11 @@ var hours = [{
 
 
 function onSave(event) {
-  var value = $(this).siblings('textarea').val();
-  console.log(value)
-}
+    var value = $(this).siblings('textarea').val();
+    var key = $(this).siblings("div").children().text();
+    console.log(value)
+    console.log(key)
+   }
 
 function onLoad() {
     var data = localStorage.getItem("hours")
@@ -93,6 +95,16 @@ function onLoad() {
         else if(currentHour < hour.time) {
             hourElt.addClass("future")
         }
+
+        $("#text-9").val(localStorage.getItem("9AM"));
+        $("#text-10").val(localStorage.getItem("10AM"));
+        $("#text-11").val(localStorage.getItem("11AM"));
+        $("#text-12").val(localStorage.getItem("12PM"));
+        $("#text-1").val(localStorage.getItem("1PM"));
+        $("#text-2").val(localStorage.getItem("2PM"));
+        $("#text-3").val(localStorage.getItem("3PM"));
+        $("#text-4").val(localStorage.getItem("4PM"));
+        $("#text-5").val(localStorage.getItem("5PM"));
 
 
     })
